@@ -1,4 +1,4 @@
-# app.py
+	# app.py
 
 from flask import Flask, jsonify, request 
 import json
@@ -66,6 +66,20 @@ def get_current_user():
             db.session.commit()
             return dummy_user
         return user
+
+# =================================================================
+# FIX: ROOT ROUTE / HEALTH CHECK (NEW CODE ADDED HERE)
+# This handles the root URL ('/') and ensures Render's health check receives a 200 OK.
+# =================================================================
+@app.route('/', methods=['GET'])
+def health_check():
+    """Returns a simple JSON response to confirm the service is running and healthy."""
+    return jsonify({
+        "status": "ok",
+        "message": "Wellbeing API is running and healthy!"
+    }), 200
+# =================================================================
+
 
 # ---------------------------------------
 # Endpoint 1: Status & Daily Data
@@ -195,4 +209,5 @@ if __name__ == '__main__':
     with app.app_context():
         # Create the database file and table if they don't exist
         db.create_all() 
+    # Use 0.0.0.0 for compatibility with Render environment
     app.run(debug=True, host='0.0.0.0')
