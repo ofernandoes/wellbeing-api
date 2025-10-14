@@ -1,0 +1,9 @@
+# Virtual Environment
+myenv/
+
+# Python compiled files
+__pycache__/
+*.pyc
+
+# Local Database
+wellbeing.db
