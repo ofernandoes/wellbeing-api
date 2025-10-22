@@ -1,14 +1,8 @@
 {
-    "name": "Flutter Development (Stable Universal)",
-    // Use the universal image as the base
-    "image": "mcr.microsoft.com/devcontainers/universal:latest",
-
-    // Add the stable Flutter Feature (without a version number)
-    "features": { 
-        "ghcr.io/devcontainers/features/flutter:latest": {}
+    "name": "Flutter Development (Dockerfile Fixed)",
+    "build": { 
+        "dockerfile": "Dockerfile"
     },
-
-    // Tells VS Code to install the necessary extensions (Dart/Flutter)
     "customizations": {
         "vscode": {
             "extensions": [
@@ -16,10 +10,6 @@
             ]
         }
     },
-
-    // Runs 'flutter doctor' as a final check after setup
     "postCreateCommand": "flutter doctor",
-
-    // Forwards the default web port for running your app in the browser
     "forwardPorts": [8080]
 }
