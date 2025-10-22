@@ -1,13 +1,12 @@
 {
-    "name": "Flutter Development (Official Image)",
-    // Using the official Flutter image instead of Universal, 
-    // which has Flutter pre-installed and avoids the error.
-    "image": "mcr.microsoft.com/devcontainers/flutter:latest",
+    "name": "Flutter Development (Stable Universal)",
+    // Use the universal image as the base
+    "image": "mcr.microsoft.com/devcontainers/universal:latest",
 
-    // Remove the 'features' section as Flutter is already installed by the image
-    // "features": { 
-    //     "ghcr.io/devcontainers/features/flutter:2": {}
-    // },
+    // Add the stable Flutter Feature (without a version number)
+    "features": { 
+        "ghcr.io/devcontainers/features/flutter:latest": {}
+    },
 
     // Tells VS Code to install the necessary extensions (Dart/Flutter)
     "customizations": {
