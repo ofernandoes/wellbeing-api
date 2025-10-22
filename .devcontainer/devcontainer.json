@@ -1,12 +1,13 @@
 {
-    "name": "Flutter Development",
-    // Uses the Universal image which includes many useful tools
-    "image": "mcr.microsoft.com/devcontainers/universal:latest",
+    "name": "Flutter Development (Official Image)",
+    // Using the official Flutter image instead of Universal, 
+    // which has Flutter pre-installed and avoids the error.
+    "image": "mcr.microsoft.com/devcontainers/flutter:latest",
 
-    // This 'feature' automatically installs Flutter, Dart, and related tools
-    "features": {
-        "ghcr.io/devcontainers/features/flutter:2": {}
-    },
+    // Remove the 'features' section as Flutter is already installed by the image
+    // "features": { 
+    //     "ghcr.io/devcontainers/features/flutter:2": {}
+    // },
 
     // Tells VS Code to install the necessary extensions (Dart/Flutter)
     "customizations": {
