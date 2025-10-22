@@ -1,0 +1,25 @@
+{
+    "name": "Flutter Development",
+    // Uses the Universal image which includes many useful tools
+    "image": "mcr.microsoft.com/devcontainers/universal:latest",
+
+    // This 'feature' automatically installs Flutter, Dart, and related tools
+    "features": {
+        "ghcr.io/devcontainers/features/flutter:2": {}
+    },
+
+    // Tells VS Code to install the necessary extensions (Dart/Flutter)
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "Dart-Code.flutter"
+            ]
+        }
+    },
+
+    // Runs 'flutter doctor' as a final check after setup
+    "postCreateCommand": "flutter doctor",
+
+    // Forwards the default web port for running your app in the browser
+    "forwardPorts": [8080]
+}
